@@ -10,12 +10,16 @@ window.addEventListener("load", () => {
             let newDiv = document.createElement("div");
             newDiv.classList.add("div");
             newDiv.addEventListener("mouseover", () => {
-                newDiv.style.backgroundColor = "black";
+                newDiv.style.backgroundColor = `rgb(${randomColorGenerator()}, ${randomColorGenerator()}, ${randomColorGenerator()})`;
             })
             rowContainer.appendChild(newDiv);
         }
     }
 });
+
+function randomColorGenerator() {
+    return Math.floor(Math.random() * 255);
+}
 
 gridBtn.addEventListener("click", () => {
     let gridValue = parseInt(prompt("How many boxes per row do you want? "));
@@ -37,8 +41,8 @@ gridBtn.addEventListener("click", () => {
             let newDiv = document.createElement("div");
             newDiv.classList.add("div");
             newDiv.addEventListener("mouseover", () => {
-                newDiv.style.backgroundColor = "black";
-            })
+                newDiv.style.backgroundColor = `rgb(${randomColorGenerator()}, ${randomColorGenerator()}, ${randomColorGenerator()})`;
+            });
             rowContainer.appendChild(newDiv);
         }
     }
