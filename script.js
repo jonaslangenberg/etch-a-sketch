@@ -14,11 +14,13 @@ window.addEventListener("load", () => {
                 let colorOfDiv = style.getPropertyValue("background-color");
                 if(colorOfDiv == "rgb(207, 250, 254)"){
                     newDiv.style.backgroundColor = `rgb(${randomColorGenerator()}, ${randomColorGenerator()}, ${randomColorGenerator()})`;
+                    newDiv.style.opacity = "0.1";
                 }
             });
             rowContainer.appendChild(newDiv);
         }
     }
+    opacityChanger();
 });
 
 function randomColorGenerator() {
@@ -49,10 +51,27 @@ gridBtn.addEventListener("click", () => {
                 let colorOfDiv = style.getPropertyValue("background-color");
                 if(colorOfDiv == "rgb(207, 250, 254)"){
                     newDiv.style.backgroundColor = `rgb(${randomColorGenerator()}, ${randomColorGenerator()}, ${randomColorGenerator()})`;
+                    newDiv.style.opacity = "0.1";
                 }
                 
             });
             rowContainer.appendChild(newDiv);
         }
     }
+    opacityChanger();
 });
+function opacityChanger() {
+    const boxElements = document.querySelectorAll(".div");
+    console.log(boxElements);
+    for (let i = 0; i < boxElements.length; i++){
+        console.log(boxElements[i]);
+        console.log("test");
+        boxElements[i].addEventListener("mouseover", () => {
+            let style = window.getComputedStyle(boxElements[i],"");
+            let opacityValue = style.getPropertyValue("opacity");
+            if(parseFloat(opacityValue) < 1.0){
+                boxElements[i].style.opacity = (parseFloat(opacityValue) + 0.1).toString();
+            }
+        });
+    }
+}

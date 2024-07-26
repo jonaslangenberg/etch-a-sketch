@@ -9,6 +9,20 @@ h1 {
     text-shadow: 2px 2px 2px black;
 }
 
+#grid-changer {
+    padding: 12px 24px;
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px #0891b2;
+    font-size: 20px;
+    font-weight: 800;
+    background-color: #22d3ee;
+}
+
+#grid-changer:hover {
+    background-color: black;
+    color: #22d3ee;
+    border-color: white;
+}
 
 body {
     display: flex;
@@ -46,7 +60,7 @@ body {
 
 .div {
     aspect-ratio: 1 / 1;
-    
     height: 100%;
+    background-color: #cffafe;
     
 }
