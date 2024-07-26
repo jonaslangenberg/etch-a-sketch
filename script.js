@@ -10,8 +10,12 @@ window.addEventListener("load", () => {
             let newDiv = document.createElement("div");
             newDiv.classList.add("div");
             newDiv.addEventListener("mouseover", () => {
-                newDiv.style.backgroundColor = `rgb(${randomColorGenerator()}, ${randomColorGenerator()}, ${randomColorGenerator()})`;
-            })
+                let style = window.getComputedStyle(newDiv,"");
+                let colorOfDiv = style.getPropertyValue("background-color");
+                if(colorOfDiv == "rgb(207, 250, 254)"){
+                    newDiv.style.backgroundColor = `rgb(${randomColorGenerator()}, ${randomColorGenerator()}, ${randomColorGenerator()})`;
+                }
+            });
             rowContainer.appendChild(newDiv);
         }
     }
@@ -41,7 +45,12 @@ gridBtn.addEventListener("click", () => {
             let newDiv = document.createElement("div");
             newDiv.classList.add("div");
             newDiv.addEventListener("mouseover", () => {
-                newDiv.style.backgroundColor = `rgb(${randomColorGenerator()}, ${randomColorGenerator()}, ${randomColorGenerator()})`;
+                let style = window.getComputedStyle(newDiv,"");
+                let colorOfDiv = style.getPropertyValue("background-color");
+                if(colorOfDiv == "rgb(207, 250, 254)"){
+                    newDiv.style.backgroundColor = `rgb(${randomColorGenerator()}, ${randomColorGenerator()}, ${randomColorGenerator()})`;
+                }
+                
             });
             rowContainer.appendChild(newDiv);
         }
